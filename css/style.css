@@ -1,0 +1,92 @@
+/* General Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#401F71, #824D74, #BE7B72, #FDAF7B);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    right: 0;
+    background-color:#401F71;
+    padding: 18px;
+    width: 100%;
+    z-index: 100;
+    justify-content: flex-end;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 12%;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color:#BE7B72;
+}
+
+/* Section Main */
+.landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Non used Class */
+.button1 {
+    background: linear-gradient(to bottom, #824D74 15%, #401F71 100%);
+    background-color: #824D74;
+    border-radius: 28px;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    text-shadow: 0px 1px 4px #401F71;
+}
+
+.button1:hover {
+    background: linear-gradient(to bottom, #401F71 15%, #824D74 100%);
+    transform: scale(1.1);
+}
