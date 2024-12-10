@@ -1,14 +1,33 @@
+:root {
+    /* Background and Surface */
+    --background-color: #121212;
+    --surface-color: #1E1E1E;
+
+    /* Text Colors */
+    --primary-text-color: #E0E0E0;
+    --secondary-text-color: #B3B3B3;
+
+    /* Accent Colors */
+    --accent-color: #36D1DC; /* Cyan */
+    --accent-hover-color: #33A7C2; /* Slightly darker cyan for hover effects */
+
+    /* Border/Separator */
+    --border-color: #2C2C2C;
+}
+
 /* General Style */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
-    background: linear-gradient(#401F71, #824D74, #BE7B72, #FDAF7B);
+    background: var(--background-color);
+    color: var(--primary-text-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 /* Navigation */
@@ -16,13 +35,23 @@ nav {
     position: sticky;
     top: 0;
     right: 0;
-    background-color:#401F71;
-    padding: 18px;
+    background-color: var(--background-color);
+    padding: 10px;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
+    display: flex;
     justify-content: flex-end;
     border-bottom: 1px solid black;
     align-items: center;
+    color: var(--primary-text-color);
+    background-color: var(--surface-color);
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
 }
 
 nav ul {
@@ -38,55 +67,72 @@ nav ul li {
     margin-left: 50px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: lighter;
-    font-size: 16px;
-    transition: color 0.2s;
-}
-
 nav ul li a:hover {
-    color:#BE7B72;
+    color: var(--accent-hover-color);
 }
 
-/* Section Main */
-.landing {
+/* Hero Section */
+#hero {
     height: 100vh;
+    background-color: var(--surface-color);
+    color: var(--primary-text-color);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    background: url(/images/Background_1.jpg) no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-/* Sections */
+#hero .container {
+    background: none;
+    padding: 0;
+    margin: 0; 
+    color: inherit;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+#hero-text {
+    font-size: 3rem;
+    animation: moveText 10s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Section Background */
 section {
-    padding: 50px;
-    text-align: center;
+    background-color: var(--background-color);
+    padding: 0;
+    margin: 0;
+    color: var(--primary-text-color);
+    overflow-x: hidden;
 }
 
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 /* Footer */
 footer {
     padding: 50px;
     text-align: center;
-}
-
-/* Non used Class */
-.button1 {
-    background: linear-gradient(to bottom, #824D74 15%, #401F71 100%);
-    background-color: #824D74;
-    border-radius: 28px;
-    border: 1px solid black;
-    display: inline-block;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-    text-shadow: 0px 1px 4px #401F71;
-}
-
-.button1:hover {
-    background: linear-gradient(to bottom, #401F71 15%, #824D74 100%);
-    transform: scale(1.1);
 }

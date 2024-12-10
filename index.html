@@ -2,28 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Title-->
     <title>Portfolio</title>
+
+    <!--SEO-->
+    <meta name="keywords" content="portfolio, web developer, projects, skills">
+    <meta name="description" content="Portfolio-page showcasing skills, projects, and experience.">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="./assests/favicon-96x96.ico">
+    <!--PNG favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192x192.png">
+
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css\style.css">
+
 </head>
 
 <body>
     <header></header>
     
     <!--Navigation-->
-    <nav>
+    <nav id="navbar">
         <ul>
-            <li><a href="#landing">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#projects">projects</a></li>
-            <li><a href="#Contact">contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
     
-    <!--Landing Page-->
-    <section class="landing">
-        <h1>Portfolio</h1>
-    </section>
+    <!--Hero Section-->
+    <div id="hero">
+        <section class="container">
+            <h1 id="hero-text"></h1>
+        </section>
+    </div>
+
+
+
+
+
+
+
 
     <!--About section-->
     <section class="about">
@@ -44,6 +70,8 @@
     <footer>
         <p>&copy; 2024 Designed & Developed by <a href="#landingpage">Merinques</a></p>
     </footer>
+
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>
