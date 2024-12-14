@@ -5,76 +5,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--Title-->
+    <!--===========================Title===========================-->
     <title>Portfolio</title>
 
-    <!--SEO-->
+    <!--=================================SEO===================================-->
     <meta name="keywords" content="portfolio, web developer, projects, skills">
     <meta name="description" content="Portfolio-page showcasing skills, projects, and experience.">
 
-    <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="./assests/favicon-96x96.ico">
-    <!--PNG favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192x192.png">
+    <!--===========================Favicon===========================-->
+    <link rel="icon" type="image/x-icon" href="./assests/favicon/favicon-96x96.ico">
+    <!--===========================PNG favicons===============================-->
+    <link rel="icon" type="image/png" sizes="16x16" href="./assests/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/favicon-192x192.png">
 
-    <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <!--===========================Icons===============================-->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!--======================CSS============================-->
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <!--======================JS============================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 </head>
 
 <body>
     <header></header>
     
-    <!--Navigation-->
-    <nav id="navbar">
-        <ul>
+    <!--===================Navigation============================-->
+    <nav class="navbar">
+        <div class="nav-logo">Portfolio</div>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    
-    <!--Hero Section-->
-    <div id="hero">
-        <section class="container">
-            <h1 id="hero-text"></h1>
-        </section>
-    </div>
 
-
-
-
-
-
-
-
-    <!--About section-->
-    <section class="about">
-        <h2>About me</h2>
-    </section>
-    
-    <!--Projects Section-->
-    <section class="projects">
-        <h2>My Projects</h2>
-        <div id="projects-container">
-            <!-- Projects will be loaded here via API -->
+    <!--===================Home Section============================-->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1 id="typewriter"></h1>
+            <p>This is my personal portfolio website.</p>
         </div>
     </section>
 
-    <!--Contact-->
-    <section class="contact">
-        <h2>Contact Me</h2>
+
+    <!--===========================About section=====================================-->
+    <section id="about" class="about-section" data-aos="fade-up">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I’m <strong>Marc Steiner</strong> 👋.  
+                    I’m currently studying <strong>Business IT / Digital Business & AI</strong> at the 
+                    <strong>Bern University of Applied Sciences</strong>, with a strong focus on 
+                    <strong>Business Data Analytics</strong>.
+                </p>
+                <p>
+                    My journey has been all about connecting the dots between <strong>business and technology</strong>.  
+                    If I had to pick one area where I’ve truly found my stride, it’s <strong>data analytics</strong>.  
+                    Turning complex data into clear, actionable insights has become my favorite challenge –  
+                    it’s like solving a puzzle that helps businesses see the bigger picture.
+                </p>
+                <p>
+                    Before my studies, I spent time in <strong>client consulting</strong> while working at a bank, where I 
+                    learned the importance of trust, clear communication, and understanding customer needs. Combine that 
+                    with my growing passion for <strong>programming</strong> – especially in <strong>Python</strong> and now 
+                    <strong>R</strong> – and you’ll see how I thrive at the intersection of data, technology, and strategy.
+                </p>
+                <p>
+                    I’m constantly learning and growing, driven by the belief that  
+                    <em>data isn’t just numbers – it’s a story waiting to be told</em>.
+                </p>
+    
+                <!-- Quote -->
+                <blockquote class="about-quote" data-aos="fade-up" data-aos-delay="1200">
+                    <p>
+                        “Data is like a compass – it only points the way forward when you know how to read it.”  
+                        <br>
+                        <span>– A great AI once told me... or maybe it’s just good advice for life.</span>
+                    </p>
+                </blockquote>
+            </div>
+    
+            <!-- Avatar -->
+            <div class="about-avatar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairFro&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=PastelBlue&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Brown" 
+                alt="Marc Steiner Avatar">
+            </div>
+        </div>
     </section>
 
-    <!--Footer-->
+
+    <!--===========================About section=====================================-->
+    <section id="skills" class="skills-section" data-aos="fade-up">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <!-- Skill Bars -->
+            <div class="skill-item">
+                <span>Python</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>SQL</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>Data Structures</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>C/C++</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>JavaScript</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>React</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--===========================Projects=====================================-->
+    <section id="projects" class="projects-section" data-aos="fade-up">
+        <h2>My Projects</h2>
+        <div id="projects-container" class="projects-container">
+        
+        </div>
+    </section>
+
+<!--================================Contact Section======================================-->
+    <section id="contact" class="contact-section" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <a href="https://github.com/Merinques" target="_blank" class="contact-icon">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="mailto:youremail@example.com" target="_blank" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </section>
+
+
+    <!--================================Footer===================================-->
     <footer>
-        <p>&copy; 2024 Designed & Developed by <a href="#landingpage">Merinques</a></p>
+        <p>&copy; 2024 Designed & Developed by <a href="#home">Merinques</a></p>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <!--Main JS-->
+    <script src="./assests/js/main.js"></script>
 
 </body>
 </html>
