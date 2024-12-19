@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--===========================Title===========================-->
-    <title>Portfolio</title>
+    <title>Portfolio Page Marc Steiner</title>
 
     <!--=================================SEO===================================-->
     <meta name="keywords" content="portfolio, web developer, projects, skills">
@@ -20,17 +20,16 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/favicon-192x192.png">
 
     <!--===========================Icons===============================-->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
     <!--======================CSS============================-->
     <link rel="stylesheet" href="./assests/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 
     <!--======================JS============================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 
 </head>
 
@@ -39,7 +38,14 @@
     
     <!--===================Navigation============================-->
     <nav class="navbar">
-        <div class="nav-logo">Portfolio</div>
+        <div class="nav-logo">
+            <!--==============Animated SVG Logo==============-->
+            <svg class="animated-logo" viewBox="0 0 500 100">
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="logo-text">
+                    Marc Steiner
+                </text>
+            </svg>
+        </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -49,14 +55,16 @@
         </ul>
     </nav>
 
-    <!--===================Home Section============================-->
+    <!--=========================Home Section============================-->
     <section id="home" class="home-section">
+        <div id="particles-js"></div>
         <div class="home-content">
             <h1 id="typewriter"></h1>
-            <p>This is my personal portfolio website.</p>
+            <p>Discover my work, my skills, and the vision that drives me forward.</p>
         </div>
     </section>
 
+    <div class="scroll-down"></div>
 
     <!--===========================About section=====================================-->
     <section id="about" class="about-section" data-aos="fade-up">
@@ -67,23 +75,22 @@
                     Hi, I’m <strong>Marc Steiner</strong> 👋.  
                     I’m currently studying <strong>Business IT / Digital Business & AI</strong> at the 
                     <strong>Bern University of Applied Sciences</strong>, with a strong focus on 
-                    <strong>Business Data Analytics</strong>.
+                    <strong>Business Data Analytics</strong> and <strong>Software Design & Architecture</strong>.
                 </p>
                 <p>
-                    My journey has been all about connecting the dots between <strong>business and technology</strong>.  
-                    If I had to pick one area where I’ve truly found my stride, it’s <strong>data analytics</strong>.  
-                    Turning complex data into clear, actionable insights has become my favorite challenge –  
-                    it’s like solving a puzzle that helps businesses see the bigger picture.
+                    My journey has always been about bridging the gap between <strong>business and technology</strong>.
+                    While <strong>data analytics</strong> has allowed me to turn complex data into clear, actionable insights, my passion for <strong>software design & architecture</strong> has empowered me to build structured, scalable solutions that solve real world challenges.
+                    Whether it’s crafting analytical models or designing robust system architectures, I enjoy creating solutions that bring clarity, efficiency, and long term value to businesses.
                 </p>
                 <p>
                     Before my studies, I spent time in <strong>client consulting</strong> while working at a bank, where I 
                     learned the importance of trust, clear communication, and understanding customer needs. Combine that 
-                    with my growing passion for <strong>programming</strong> – especially in <strong>Python</strong> and now 
-                    <strong>R</strong> – and you’ll see how I thrive at the intersection of data, technology, and strategy.
+                    with my growing passion for <strong>programming</strong> especially in <strong>Python</strong> and now 
+                    <strong>R</strong> and you’ll see how I thrive at the intersection of data, technology, and strategy.
                 </p>
                 <p>
-                    I’m constantly learning and growing, driven by the belief that  
-                    <em>data isn’t just numbers – it’s a story waiting to be told</em>.
+                    I’m constantly learning and growing, driven by the belief that
+                    <em>data isn’t just numbers – it’s a story waiting to be told, and well-designed systems are the frameworks that bring these stories to life</em>.
                 </p>
     
                 <!-- Quote -->
@@ -120,23 +127,35 @@
             <div class="skill-item">
                 <span>Python</span>
                 <div class="progress-bar">
-                    <div class="progress" data-width="90%"></div>
+                    <div class="progress" data-width="60%"></div>
                 </div>
             </div>
             <div class="skill-item">
                 <span>SQL</span>
                 <div class="progress-bar">
+                    <div class="progress" data-width="70%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>R</span>
+                <div class="progress-bar">
                     <div class="progress" data-width="80%"></div>
                 </div>
             </div>
             <div class="skill-item">
-                <span>Data Structures</span>
+                <span>HTML</span>
                 <div class="progress-bar">
                     <div class="progress" data-width="85%"></div>
                 </div>
             </div>
             <div class="skill-item">
-                <span>C/C++</span>
+                <span>CSS</span>
+                <div class="progress-bar">
+                    <div class="progress" data-width="75%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>Javascript</span>
                 <div class="progress-bar">
                     <div class="progress" data-width="70%"></div>
                 </div>
@@ -146,25 +165,37 @@
         <!-- Soft Skills -->
         <div id="soft-skills" class="skills-container">
             <div class="skill-item">
-                <span>Problem Solving</span>
-                <div class="progress-bar">
-                    <div class="progress" data-width="90%"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <span>Communication</span>
+                <span>Analytical thinking</span>
                 <div class="progress-bar">
                     <div class="progress" data-width="85%"></div>
                 </div>
             </div>
             <div class="skill-item">
-                <span>Adaptability</span>
+                <span>Communication</span>
                 <div class="progress-bar">
                     <div class="progress" data-width="80%"></div>
                 </div>
             </div>
             <div class="skill-item">
+                <span>Adaptability</span>
+                <div class="progress-bar">
+                    <div class="progress" data-width="90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
                 <span>Teamwork</span>
+                <div class="progress-bar">
+                    <div class="progress" data-width="85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>Organizational skills</span>
+                <div class="progress-bar">
+                    <div class="progress" data-width="80%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span>Time management</span>
                 <div class="progress-bar">
                     <div class="progress" data-width="75%"></div>
                 </div>
@@ -188,11 +219,11 @@
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
             </a>
-            <a href="mailto:youremail@example.com" target="_blank" class="contact-icon">
+            <a href="mailto:marc.steiner@students.bfh.ch" target="_blank" class="contact-icon">
                 <i class="fas fa-envelope"></i>
                 <span>Email</span>
             </a>
-            <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-icon">
+            <a href="https://linkedin.com/in/marc-steiner-b1b9a2339/" target="_blank" class="contact-icon">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
             </a>

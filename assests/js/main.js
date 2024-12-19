@@ -8,12 +8,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
+// particle.js
+document.addEventListener("DOMContentLoaded", () => {
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 100, density: { enable: true, value_area: 800 } },
+            color: { value: "#007BFF" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5 },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: "#007BFF", opacity: 0.5, width: 1 },
+            move: { enable: true, speed: 3 }
+        },
+        interactivity: {
+            events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" }
+            }
+        },
+        retina_detect: true
+    });
+});
 
 // Dynamic Text
 document.addEventListener("DOMContentLoaded", () => {
     const textArray = [
         "Welcome to my portfolio!",
+        "Exploring the intersection of business and technology.",
         "Glad to have you here!",
         "Hello and welcome!",
         "Hi, thanks for stopping by!",
@@ -21,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const typewriterElement = document.getElementById("typewriter");
-    const typingSpeed = 100; // 
-    const eraseSpeed = 50; // 
-    const pauseBetweenTexts = 2000; // 
+    const typingSpeed = 100; 
+    const eraseSpeed = 50; 
+    const pauseBetweenTexts = 2000; 
 
     let textIndex = 0;
     let charIndex = 0;
@@ -31,23 +52,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function typeEffect() {
         const currentText = textArray[textIndex];
+        
         if (!isDeleting) {
-            // Tippen
+            // Typing Effect
             typewriterElement.textContent = currentText.slice(0, charIndex++);
             if (charIndex > currentText.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, pauseBetweenTexts);
+                setTimeout(typeEffect, pauseBetweenTexts); // Pause before erasing
             } else {
                 setTimeout(typeEffect, typingSpeed);
             }
         } else {
-            // Löschen
+            // Erasing Effect
             typewriterElement.textContent = currentText.slice(0, charIndex--);
             if (charIndex === 0) {
                 isDeleting = false;
-                textIndex = (textIndex + 1) % textArray.length; 
+                textIndex = (textIndex + 1) % textArray.length; // Move to next text
+                setTimeout(typeEffect, 50); // Slight delay to restart typing
+            } else {
+                setTimeout(typeEffect, eraseSpeed);
             }
-            setTimeout(typeEffect, eraseSpeed);
         }
     }
 
@@ -163,34 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchGitHubRepos();
-});
-
-// Toggle
-document.addEventListener("DOMContentLoaded", () => {
-    const technicalBtn = document.getElementById("technical-btn");
-    const softBtn = document.getElementById("soft-btn");
-    const technicalSkills = document.getElementById("technical-skills");
-    const softSkills = document.getElementById("soft-skills");
-
-    technicalBtn.addEventListener("click", () => {
-        // Toggle Visibility
-        technicalSkills.classList.remove("hidden");
-        softSkills.classList.add("hidden");
-
-        // Toggle Active Button
-        technicalBtn.classList.add("active");
-        softBtn.classList.remove("active");
-    });
-
-    softBtn.addEventListener("click", () => {
-        // Toggle Visibility
-        softSkills.classList.remove("hidden");
-        technicalSkills.classList.add("hidden");
-
-        // Toggle Active Button
-        softBtn.classList.add("active");
-        technicalBtn.classList.remove("active");
-    });
 });
 
 // AOS Initialization
