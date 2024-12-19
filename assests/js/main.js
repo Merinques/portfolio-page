@@ -54,6 +54,71 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 });
 
+// Skills Button and Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleTech = document.getElementById("toggle-tech");
+    const toggleSoft = document.getElementById("toggle-soft");
+    const techSkills = document.getElementById("technical-skills");
+    const softSkills = document.getElementById("soft-skills");
+
+    // Funktion zum Umschalten der Skills
+    function toggleSkills(showTech) {
+        if (showTech) {
+            techSkills.classList.add("active");
+            softSkills.classList.remove("active");
+            toggleTech.classList.add("active");
+            toggleSoft.classList.remove("active");
+        } else {
+            softSkills.classList.add("active");
+            techSkills.classList.remove("active");
+            toggleSoft.classList.add("active");
+            toggleTech.classList.remove("active");
+        }
+    }
+
+    // Event Listener für die Buttons
+    toggleTech.addEventListener("click", () => toggleSkills(true));
+    toggleSoft.addEventListener("click", () => toggleSkills(false));
+});
+
+// Skills animation
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleTech = document.getElementById("toggle-tech");
+    const toggleSoft = document.getElementById("toggle-soft");
+    const technicalSkills = document.getElementById("technical-skills");
+    const softSkills = document.getElementById("soft-skills");
+
+    // Function to reset and animate progress bars
+    function resetProgressBars(container) {
+        const progressBars = container.querySelectorAll(".progress");
+        progressBars.forEach(bar => {
+            bar.style.width = "0"; // Reset width
+            setTimeout(() => {
+                bar.style.width = bar.getAttribute("data-width"); // Animate to target width
+            }, 100); // Slight delay for smooth animation
+        });
+    }
+
+    toggleTech.addEventListener("click", () => {
+        technicalSkills.classList.add("active");
+        softSkills.classList.remove("active");
+        toggleTech.classList.add("active");
+        toggleSoft.classList.remove("active");
+        resetProgressBars(technicalSkills);
+    });
+
+    toggleSoft.addEventListener("click", () => {
+        softSkills.classList.add("active");
+        technicalSkills.classList.remove("active");
+        toggleSoft.classList.add("active");
+        toggleTech.classList.remove("active");
+        resetProgressBars(softSkills);
+    });
+
+    // Initial animation on load
+    resetProgressBars(technicalSkills);
+});
+
 // Github API
 document.addEventListener("DOMContentLoaded", () => {
     const projectsContainer = document.getElementById("projects-container");

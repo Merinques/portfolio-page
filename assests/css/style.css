@@ -9,7 +9,7 @@
     --background-color: #dbdbdb;
     --surface-color: #f4f4f4;
     --primary-color: #333;
-    --text-color: #f0f0f0;
+    --text-color: #686767 ;
     --heading-color: #ffffff;
     --accent-color: #007BFF;
 
@@ -84,7 +84,7 @@ img{
     align-items: center;
     background-color: var(--primary-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 1.2rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -94,7 +94,7 @@ img{
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -163,6 +163,7 @@ img{
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .about-content p {
@@ -214,9 +215,8 @@ img{
 
 .skills-section h2 {
     font-size: 2rem;
-    color: var(--primary-color); /* Hauptfarbe */
+    color: var(--primary-color);
     margin-bottom: 2rem;
-    text-transform: uppercase;
 }
 
 .skills-container {
@@ -285,63 +285,113 @@ img{
 }
 
 /* Toggle Buttons */
-.skills-toggle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    gap: 1rem;
-}
-
-.toggle-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--accent-color);
-    background-color: var(--surface-color);
-    color: var(--primary-color);
-    cursor: pointer;
+.custom-btn {
+    background-color: transparent; /* Background matches website */
+    color: #333; /* Text color: Adjust as per theme */
+    border: 2px solid #007bff; /* Border matches theme primary color */
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
     border-radius: 5px;
-    font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
-.toggle-btn.active {
-    background-color: var(--accent-color);
-    color: white;
+/* Button Hover Effect */
+.custom-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #007bff; /* Hover background color */
+    transition: width 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.custom-btn:hover::before {
+    width: 100%; /* Background fills from left to right */
+}
+
+.custom-btn:hover {
+    color: #fff; /* Text turns white on hover */
+    border-color: #007bff;
+}
+
+/* Active Button Style */
+.custom-btn.active {
+    background-color: #007bff; /* Solid background for active */
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #007bff;
+    width: 0;
+    height: 100%;
+    transition: width 1.5s ease-in-out;
+    border-radius: 10px;
 }
 
 /* Skills Container */
 .skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: none; /* Verstecke standardmäßig alle Skill-Container */
 }
 
-.skill-item span {
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+.skills-container.active {
+    display: block; /* Zeige nur den aktiven Container */
+}
+
+/* Progress Bars */
+.skill-item {
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 .progress-bar {
     width: 100%;
-    height: 8px;
-    background-color: #e0e0e0;
+    height: 10px;
+    background-color: #ddd;
     border-radius: 5px;
     overflow: hidden;
 }
 
 .progress {
     height: 100%;
-    background-color: var(--accent-color);
-    border-radius: 5px;
-    transition: width 0.5s ease;
-}
-
-/* Hide Soft Skills by Default */
-.hidden {
-    display: none;
+    background-color: var(--accent-color, #007BFF);
+    width: 0; /* Initiale Breite */
+    transition: width 2s ease-in-out; /* Animation */
 }
 
 
 /* ========================Projects Section===================== */
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes gradient-rotate {
+    to {
+        --gradient-angle: 360deg;
+    }
+}
+
 .projects-section {
     padding: 4rem 2rem;
     background-color: var(--surface-color);
@@ -355,18 +405,36 @@ img{
 }
 
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    gap: 2rem; 
+    justify-content: center; 
+    padding: 2rem;
+    margin: 0 auto; 
+    max-width: 85%; 
 }
 
 .project-card {
-    background-color: #ffffff;
+    flex: 1 1 calc(33.33% - 2rem);
+    max-width: 40rem;
+    position: relative;
+    background: var(--surface-color); /* Card Background */
+    border: 4px solid transparent;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 1.5rem;
     text-align: left;
     transition: transform 0.3s ease;
+    background-image: 
+        linear-gradient(var(--surface-color), var(--surface-color)), 
+        conic-gradient(
+            from var(--gradient-angle),
+            #007BFF, #00D4FF, #007BFF
+        );
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    animation: gradient-rotate 5s linear infinite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
@@ -395,7 +463,7 @@ img{
     display: inline-block;
     text-decoration: none;
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -405,6 +473,7 @@ img{
 .project-card a:hover {
     background-color: #0056b3;
 }
+
 
 /*=================================Contact Section==================================*/
 .contact-section {
@@ -504,5 +573,36 @@ footer{
     }
     100% {
         box-shadow: 0 0 10px var(--accent-color);
+    }
+}
+
+/*=================================Media Queris==================================*/
+@media screen and (max-width: 968px) {
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Text-Zentrierung */
+    .about-section, .skills-section, .projects-section, .contact-section {
+        text-align: center;
+    }
+
+    section {
+        padding: 2rem 1rem; /* Reduziertes Padding */
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Projekte in einer Spalte */
+    }
+
+    .project-card {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .about-avatar img {
+        width: 70%; /* Avatar verkleinern */
     }
 }
